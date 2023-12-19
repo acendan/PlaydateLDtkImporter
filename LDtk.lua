@@ -460,7 +460,9 @@ function LDtk.create_tilemap( level_name, layer_name )
 
 	local tilemap = playdate.graphics.tilemap.new()
 	tilemap:setImageTable( layer.tileset_image )
-	tilemap:setTiles( layer.tiles, layer.tilemap_width)
+	if layer.tiles then
+		tilemap:setTiles( layer.tiles, layer.tilemap_width)
+	end
 
 	return tilemap
 end
